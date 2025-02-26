@@ -3,14 +3,21 @@ import { Helmet } from 'react-helmet-async'
 import Heading from '../../components/Shared/Heading'
 import Button from '../../components/Shared/Button/Button'
 import PurchaseModal from '../../components/Modal/PurchaseModal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 const PlantDetails = () => {
+  const {id} = useParams()
+  console.log(id);
   let [isOpen, setIsOpen] = useState(false)
 
   const closeModal = () => {
     setIsOpen(false)
   }
+
+
+
 
   return (
     <Container>
